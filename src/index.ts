@@ -12,11 +12,7 @@ app.use(logger("common"));
 app.use(helmet());
 app.use(express.json());
 
-
 app.use(router);
-app.use("/", (req, res) => {
-  return res.json({ host: os.hostname() });
-});
 
 app.listen(process.env.NODE_PORT, () => {
   console.log(`Server running at PORT: ${process.env.NODE_PORT}`);
