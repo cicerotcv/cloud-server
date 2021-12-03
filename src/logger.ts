@@ -10,6 +10,6 @@ const accessLogStream = fs.createWriteStream(
 );
 export const consoleLogger = logger("common");
 export const fileLogger = logger("common", {
-  skip: (req, res) => req.url !== "/",
+  skip: (req, res) => req.url === "/",
   stream: accessLogStream
 });
