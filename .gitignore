@@ -1,6 +1,7 @@
 .env
 .env.*
 !.env.example
+/src/*.log
 
 /node_modules
 /dist
