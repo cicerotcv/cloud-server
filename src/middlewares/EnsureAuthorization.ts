@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { HEADERS } from "../constants";
 import { generateToken } from "../helpers";
 
-const SECRET = process.env.SECRET as string;
+const SECRET = process.env.NODE_SECRET as string;
 
 export function ensureAuthorization(
   req: Request,

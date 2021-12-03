@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 
 export function generateToken(customObject: object, options: jwt.SignOptions) {
-  const token = jwt.sign(customObject, process.env.SECRET!, options);
+  const token = jwt.sign(customObject, process.env.NODE_SECRET!, options);
   return `Bearer ${token}`;
 }
 

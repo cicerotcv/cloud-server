@@ -1,14 +1,14 @@
 import "./environment";
 import express from "express";
-import logger from "morgan";
 import helmet from "helmet";
-import os from "os";
+import { consoleLogger, fileLogger } from "./logger";
 
 import { router } from "./routes";
 
 const app = express();
 
-app.use(logger("common"));
+app.use(consoleLogger);
+app.use(fileLogger);
 app.use(helmet());
 app.use(express.json());
 

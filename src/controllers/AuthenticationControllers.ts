@@ -54,6 +54,15 @@ class AuthenticationController {
     }
   }
 
+  async checkAuthentication(req: Request, res: Response) {
+    try {
+      return res.json({ authenticated: true });
+    } catch (error) {
+      console.log(error);
+      return res.sendStatus(500);
+    }
+  }
+
   async login(req: Request, res: Response) {
     try {
       const { email, password } = req.body;
